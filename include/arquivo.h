@@ -1,5 +1,6 @@
 #ifndef ARQUIVO_H
 #define ARQUIVO_H
+#include "criatura.h"
 
 void clearScreen(void);
 void pausas(int ms);
