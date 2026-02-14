@@ -2,7 +2,7 @@
 #include "criatura.h"
 #include "arquivo.h"
 
-int main() {
+int main(void) {
     cadastrarCriatura();
     salvarDados();
     return 0;
