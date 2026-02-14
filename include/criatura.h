@@ -1,8 +1,7 @@
 #ifndef CRIATURA_H
 #define CRIATURA_H
 
-char *tipos[18] = {"Grama", "Fogo", "Agua", "Normal", "Eletrico", "Psiquico", "Lutador", "Pedra", "Terrestre",
-                "Voador", "Inseto", "Veneno", "Sombrio", "Fantasma", "Gelo", "Aco", "Dragao", "Fada"};
+extern char *tipos[18];
 
 typedef struct Criatura {
     char nome[30];
