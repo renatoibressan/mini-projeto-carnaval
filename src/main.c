@@ -4,5 +4,6 @@
 
 int main() {
     cadastrarCriatura();
+    salvarDados();
     return 0;
 }
