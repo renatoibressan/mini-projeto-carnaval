@@ -2,5 +2,5 @@
 #include "arquivo.h"
 
 void salvarDados() {
-    printf("Função ainda não implementada\n");
+    printf("Funcao salvarDados ainda nao implementada\n");
 }
