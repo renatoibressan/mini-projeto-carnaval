@@ -11,10 +11,13 @@
 #endif
 
 void menuPrincipal(void) {
-    printf("Hello, World!\n");
+    clearScreen();
+    slowPrint("===== SISTEMA GERENCIADOR DE BAIRROS =====\n", 60);
+    slowPrint("Desenvolvido por:\nRenato Ikeda Bressan\n    ", 40);
+    clearScreen();
 }
 
-int main(void) {
+int main(int argc, char *argv[]) {
     criatura *c;
     menuPrincipal();
     return 0;

@@ -14,6 +14,7 @@ void clearScreen(void);
 void pausas(int ms);
 void slowPrint(const char *txt, int delay);
 void limparBuffer(void);
+void inicializarVetor(criatura **c);
 void ordenarCriaturas(criatura *c);
 int criaturaExiste(const char *nomeCriatura);
 int tipoExiste(const char *tipo);
