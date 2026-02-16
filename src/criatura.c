@@ -79,7 +79,6 @@ void criarCriatura(criatura **c, char *nomes[], int *count) {
     do {
         printf("Tipo primario da criatura: ");
         scanf("%[^\n]%*c", novoTipo1);
-        upperCase(&novoTipo1[0]);
         if (!tipoExiste(novoTipo1)) {
             slowPrint("---------------------------------------------\n", 25);
             printf("Por favor, use um tipo valido.\n");
@@ -91,7 +90,6 @@ void criarCriatura(criatura **c, char *nomes[], int *count) {
     } while (1);
     printf("Tipo secundario da criatura: ");
     scanf("%[^\n]%*c", novoTipo2);
-    upperCase(&novoTipo2[0]);
     if (!tipoExiste(novoTipo2)) strcpy((*crit).tipo2, "---");
     else strcpy((*crit).tipo2, novoTipo2);
     printf("Nivel da criatura: ");
