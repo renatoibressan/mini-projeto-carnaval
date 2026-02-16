@@ -10,7 +10,7 @@
 #include <unistd.h>
 #endif
 
-void menuPrincipal(char ch, criatura **c, char *nomes[], int count) {
+void menuPrincipal(char ch, criatura **c, char *nomes[], int count, const char *nomeArquivo) {
     clearScreen();
     slowPrint("===== SISTEMA DE CATALOGO DE CRIATURAS =====\n", 60);
     slowPrint("Desenvolvido por:\nRenato Ikeda Bressan\n    ", 40);
@@ -75,6 +75,11 @@ void menuPrincipal(char ch, criatura **c, char *nomes[], int count) {
             case 'd':
                 deletarCriatura(&c, nomes, &count);
                 checkup = 0;
+                clearScreen();
+                break;
+            case 'E':
+            case 'e':
+                salvarCriaturas(nomeArquivo, c);
                 clearScreen();
                 break;
             case '0':

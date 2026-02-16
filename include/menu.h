@@ -2,6 +2,6 @@
 #define MENU_H
 #include "criatura.h"
 
-void menuPrincipal(char ch, criatura **c, char *nomes[], int count);
+void menuPrincipal(char ch, criatura **c, char *nomes[], int count, const char *nomeArquivo);
 
 #endif
