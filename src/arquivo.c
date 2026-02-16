@@ -37,7 +37,7 @@ void carregarCriaturas(const char *nomeArquivo, criatura **lista) {
         return;
     }
     while (i < idx) {
-        while (fscanf(arq, "%29[^:]: %14[^/]/%14s Lv.%d %d/%d/%d/%d", (*lista[i]).nome, (*lista[i]).tipo1, (*lista[i]).tipo2,
+        while (fscanf(arquivo, "%29[^:]: %14[^/]/%14s Lv.%d %d/%d/%d/%d", (*lista[i]).nome, (*lista[i]).tipo1, (*lista[i]).tipo2,
             &((*lista[i]).nivel), &((*lista[i]).hp), &((*lista[i]).atk), &((*lista[i]).def), &((*lista[i]).speed)) == 8) {
                 slowPrint("---------------------------------------------\n", 25);
                 printf("Nome da criatura: %s\n", (*lista[i]).nome);
