@@ -8,8 +8,9 @@
 #include <unistd.h>
 #endif
 
-char *tipos[18] = {"Grama", "Fogo", "Agua", "Normal", "Eletrico", "Psiquico", "Lutador", "Pedra", "Terrestre",
-                "Voador", "Inseto", "Veneno", "Sombrio", "Fantasma", "Gelo", "Aco", "Dragao", "Fada"};
+char *tipos[18] = {"Grama\n", "Fogo\n", "Agua\n", "Normal\n", "Eletrico\n", "Psiquico\n",
+                "Lutador\n", "Pedra\n", "Terrestre\n", "Voador\n", "Inseto\n", "Veneno\n",
+                "Sombrio\n", "Fantasma\n", "Gelo\n", "Aco\n", "Dragao\n", "Fada\n"};
 int idx = 0;
 void clearScreen(void) {
 #ifdef _WIN32
@@ -79,6 +80,7 @@ void criarCriatura(criatura **c, char *nomes[], int *count) {
     do {
         printf("Tipo primario da criatura: ");
         scanf("%[^\n]%*c", novoTipo1);
+        upperCase(&novoTipo1[0]);
         if (!tipoExiste(novoTipo1)) {
             slowPrint("---------------------------------------------\n", 25);
             printf("Por favor, use um tipo valido.\n");
@@ -90,6 +92,7 @@ void criarCriatura(criatura **c, char *nomes[], int *count) {
     } while (1);
     printf("Tipo secundario da criatura: ");
     scanf("%[^\n]%*c", novoTipo2);
+    upperCase(&novoTipo2[0]);
     if (!tipoExiste(novoTipo2)) strcpy((*crit).tipo2, "---");
     else strcpy((*crit).tipo2, novoTipo2);
     printf("Nivel da criatura: ");
