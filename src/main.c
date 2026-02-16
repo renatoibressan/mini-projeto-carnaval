@@ -80,7 +80,7 @@ void menuPrincipal(char ch, criatura **c, char *nomes[], int count) {
             case '0':
                 slowPrint("Encerrando o programa...\n", 75);
                 break;
-            default: printf("Opcao invalida! Pressione ENTER para voltar:\n"); getchar();
+            default: printf("Opcao invalida! Pressione ENTER para voltar:\n"); getchar(); clearScreen();
         }
     }
     liberarCriaturas(c);
