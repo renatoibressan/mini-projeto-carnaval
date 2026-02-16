@@ -66,7 +66,7 @@ void criarCriatura(criatura **c, char *nomes[], int *count) {
     printf("Por favor, insira os dados:\n");
     do {
         printf("Nome da criatura: ");
-        scanf(" %[^\n]%*c", novoNome);
+        scanf(" %29[^\n]", novoNome);
         upperCase(&novoNome[0]);
         if (criaturaExiste(novoNome, nomes, *count)) {
             slowPrint("---------------------------------------------\n", 25);
@@ -79,7 +79,7 @@ void criarCriatura(criatura **c, char *nomes[], int *count) {
     } while (1);
     do {
         printf("Tipo primario da criatura: ");
-        scanf("%s", novoTipo1);
+        scanf("%14s", novoTipo1);
         limparBuffer();
         upperCase(&novoTipo1[0]);
         if (!tipoExiste(novoTipo1)) {
@@ -92,7 +92,7 @@ void criarCriatura(criatura **c, char *nomes[], int *count) {
         }
     } while (1);
     printf("Tipo secundario da criatura: ");
-    scanf("%s", novoTipo2);
+    scanf("%14s", novoTipo2);
     limparBuffer();
     upperCase(&novoTipo2[0]);
     if (!tipoExiste(novoTipo2)) strcpy((*crit).tipo2, "---");
@@ -111,7 +111,9 @@ void criarCriatura(criatura **c, char *nomes[], int *count) {
     limparBuffer();
     printf("Velocidade: ");
     scanf("%d", &((*crit).speed));
+    limparBuffer();
     c[idx] = crit;
+    nomes[*count] = malloc(30*sizeof(char));
     strcpy(nomes[*count], (*crit).nome);
     (*count)++;
     slowPrint("---------------------------------------------\n", 25);
