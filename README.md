@@ -1,67 +1,68 @@
+
 # mini-projeto-carnaval
 
-Small C project (mini-project) used for learning and demonstrating basic program structure in C.
+Pequeno projeto em C (mini-projeto) usado para aprendizado e demonstração de estrutura básica de programas em C.
 
-**Description**
-- **mini-projeto-carnaval** is a compact, educational C project that contains a small command-line application with modular source files split between `src/` and `include/`.
-- The code is organized into separate modules for menu handling, file operations, creature logic, and utility helpers.
+**Descrição**
+- **mini-projeto-carnaval** é um projeto educacional e compacto em C que contém uma aplicação de linha de comando com arquivos fonte modulares organizados em `src/` e `include/`.
+- O código está separado em módulos para tratamento de menu, operações de arquivo, lógica de criatura e utilitários.
 
-**Repository structure**
-- `build.bat` : Windows build script
-- `include/` : Public headers used by the project
+**Estrutura do repositório**
+- `build.bat` : script de compilação para Windows
+- `include/` : cabeçalhos públicos usados pelo projeto
 	- `arquivo.h`
 	- `criatura.h`
 	- `menu.h`
 	- `utils.h`
-- `src/` : Source files
+- `src/` : arquivos fonte
 	- `arquivo.c`
 	- `criatura.c`
 	- `main.c`
 	- `menu.c`
 	- `utils.c`
 
-**Requirements**
-- A C compiler (GCC/MinGW, Clang, or MSVC).
-- Basic command-line / terminal access.
+**Requisitos**
+- Um compilador C (GCC/MinGW, Clang ou MSVC).
+- Acesso básico ao terminal/linha de comando.
 
-**Build (Windows)**
-1. Open a Command Prompt or PowerShell in the project root.
-2. Run the provided build script:
+**Compilação (Windows)**
+1. Abra o Prompt de Comando ou PowerShell na raiz do projeto.
+2. Execute o script de compilação fornecido:
 
 ```powershell
 build.bat
 ```
 
-The script will compile the sources and produce an executable in the project root (name depends on the script/toolchain).
+O script irá compilar os fontes e gerar um executável na raiz do projeto (o nome depende do toolchain).
 
-**Manual build (GCC / MinGW / Linux / macOS)**
-You can compile the project manually with `gcc`. From the project root run:
+**Compilação manual (GCC / MinGW / Linux / macOS)**
+Você pode compilar manualmente com `gcc`. A partir da raiz do projeto execute:
 
 ```bash
 gcc -Iinclude -o carnaval src/main.c src/menu.c src/arquivo.c src/criatura.c src/utils.c -Wall -Wextra
 ```
 
-This produces an executable named `carnaval` (or `carnaval.exe` on Windows). Adjust filenames and flags to suit your toolchain.
+Isso gera um executável chamado `carnaval` (ou `carnaval.exe` no Windows). Ajuste nomes de arquivo e flags conforme seu compilador.
 
-**Usage**
-- Run the produced executable from the project root.
+**Uso**
+- Execute o executável gerado a partir da raiz do projeto:
 
 ```powershell
 ./carnaval    # Unix-like
 .\carnaval.exe  # Windows PowerShell/CMD
 ```
 
-- The program uses a simple CLI menu (see `src/menu.c`) to interact with the user. Source comments and header files in `include/` explain module responsibilities.
+- O programa apresenta um menu simples em CLI (veja `src/menu.c`) para interação. Comentários nas fontes e cabeçalhos em `include/` explicam as responsabilidades dos módulos.
 
-**Notes & tips**
-- If you get missing-header errors, ensure the compiler include path includes `include/` (see `-Iinclude`).
-- For debugging builds, add `-g` and remove optimization flags. For release builds, consider `-O2` or `-O3`.
+**Observações e dicas**
+- Se houver erros de cabeçalho faltando, verifique se o caminho de inclusão do compilador inclui `include/` (use `-Iinclude`).
+- Para builds de depuração, adicione `-g` e remova otimizações. Para release, considere `-O2` ou `-O3`.
 
-**Contributing**
-- Feel free to open issues or submit pull requests. Keep changes small and focused; document behavior changes in code comments.
+**Contribuição**
+- Abra issues ou envie pull requests. Mantenha mudanças pequenas e documente alterações comportamentais nos comentários do código.
 
-**License**
-- No license is specified in this repository. Add a `LICENSE` file or contact the repository owner to confirm licensing.
+**Licença**
+- Não há uma licença especificada neste repositório. Adicione um arquivo `LICENSE` ou contate o mantenedor para confirmar a licença.
 
-**Contact**
-- For questions about the project structure or to request features, open an issue in the repository.
+**Contato**
+- Para dúvidas sobre a estrutura do projeto ou solicitações de funcionalidades, abra uma issue no repositório.
