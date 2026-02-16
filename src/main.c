@@ -39,12 +39,14 @@ void menuPrincipal(char ch, criatura **c, char *nomes[], int count) {
                 if (checkup == 0) inicializarVetor(&c);
                 criarCriatura(c, nomes, &count);
                 checkup = 1;
+                clearScreen();
                 break;
             case 'B':
             case 'b':
                 if (*c == NULL) {
                     slowPrint("Nao ha criaturas para exibir!\n", 50);
                     slowPrint("---------------------------------------------\n", 25);
+                    clearScreen();
                     break;
                 } else {
                     printf("Insira um nome para procura de criatura: ");
@@ -52,12 +54,14 @@ void menuPrincipal(char ch, criatura **c, char *nomes[], int count) {
                     upperCase(&nomeTeste[0]);
                     exibirCriatura(nomeTeste, c);
                 }
+                clearScreen();
                 break;
             case 'C':
             case 'c':
                 if (*c == NULL) {
                     slowPrint("Nao ha criaturas para editar!\n", 50);
                     slowPrint("---------------------------------------------\n", 25);
+                    clearScreen();
                     break;
                 } else {
                     printf("Insira um nome para procura de criatura: ");
@@ -65,11 +69,13 @@ void menuPrincipal(char ch, criatura **c, char *nomes[], int count) {
                     upperCase(&nomeTeste[0]);
                     editarCriatura(nomeTeste, c);
                 }
+                clearScreen();
                 break;
             case 'D':
             case 'd':
                 deletarCriatura(&c, nomes, &count);
                 checkup = 0;
+                clearScreen();
                 break;
             case '0':
                 slowPrint("Encerrando o programa...\n", 75);

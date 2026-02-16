@@ -122,9 +122,8 @@ void criarCriatura(criatura **c, char *nomes[], int *count) {
     idx++;
 }
 void exibirCriatura(const char *nomeCriatura, criatura **c) {
-    int i = 0;
     int found = 0;
-    while (i < idx) {
+    for (int i = 0; i < idx; i++) {
         if (strcmp(nomeCriatura, (*c[i]).nome) == 0) {
             slowPrint("---------------------------------------------\n", 25);
             printf("Criatura '%s' encontrada!\n", (*c[i]).nome);
@@ -132,12 +131,12 @@ void exibirCriatura(const char *nomeCriatura, criatura **c) {
             printf("Tipagens: %s/%s\n", (*c[i]).tipo1, (*c[i]).tipo2);
             slowPrint("---------------------------------------------\n", 25);
             printf("Nivel: %d\n", (*c[i]).nivel);
+            slowPrint("---------------------------------------------\n", 25);
             printf("Stats:\nHP: %d\nAtaque: %d\nDefesa: %d\nVelocidade: %d\n", (*c[i]).hp, (*c[i]).atk, (*c[i]).def, (*c[i]).speed);
             slowPrint("---------------------------------------------\n", 25);
             found = 1;
             break;
         }
-        i++;
     }
     if (!found) {
         printf("Nenhuma criatura de nome '%s' foi encontrada.\n", nomeCriatura);
@@ -161,6 +160,7 @@ void editarCriatura(const char *nomeCriatura, criatura **c) {
             slowPrint("Qual edicao deseja realizar? ", 25);
             scanf("%d", &option);
             limparBuffer();
+            clearScreen();
             switch (option) {
                 case 1:
                     do {
@@ -219,6 +219,9 @@ void editarCriatura(const char *nomeCriatura, criatura **c) {
                     limparBuffer();
             }
             found = 1;
+            slowPrint("---------------------------------------------\n", 25);
+            printf("Edicao de '%s' realizada com sucesso!\n", (*c[i]).nome);
+            slowPrint("---------------------------------------------\n", 25);
             break;
         }
     }
@@ -233,6 +236,7 @@ void deletarCriatura(criatura ***c, char *nomes[], int *count) {
     for (i = 0; i < 150; i++) {
         if ((*c)[i] != NULL) {
             printf("Criatura '%s' deletada com sucesso!\n", (*(*c)[i]).nome);
+            slowPrint("---------------------------------------------\n", 25);
             free((*c)[i]);
             (*c)[i] = NULL;
         }
