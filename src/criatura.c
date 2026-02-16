@@ -53,9 +53,9 @@ int criaturaExiste(const char *nomeCriatura, char *nomes[], int count) {
 }
 int tipoExiste(const char *tipo) {
     for (int i = 0; i < 18; i++) {
-        if (strcmp(tipo, tipos[i]) != 0) return 0;
+        if (strcmp(tipo, tipos[i]) == 0) return 1;
     }
-    return 1;
+    return 0;
 }
 void criarCriatura(criatura **c, char *nomes[], int *count) {
     char novoNome[30];
