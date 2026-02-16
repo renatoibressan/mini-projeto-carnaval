@@ -11,11 +11,6 @@ typedef struct Criatura {
 extern char *tipos[18];
 extern int idx;
 
-void clearScreen(void);
-void pausas(int ms);
-void slowPrint(const char *txt, int delay);
-void limparBuffer(void);
-void upperCase(char *c);
 void inicializarVetor(criatura ***c);
 int criaturaExiste(const char *nomeCriatura, char *nomes[], int count);
 int tipoExiste(const char *tipo);
