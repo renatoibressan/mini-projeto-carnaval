@@ -117,7 +117,7 @@ void criarCriatura(criatura **c, char *nomes[], int *count) {
     slowPrint("---------------------------------------------\n", 25);
     idx++;
 }
-void exibirCriatura(const char *nomeCriatura, const criatura **c) {
+void exibirCriatura(const char *nomeCriatura, criatura **c) {
     int i = 0;
     int found = 0;
     while (i < idx) {
