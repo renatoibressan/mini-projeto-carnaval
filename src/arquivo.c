@@ -17,7 +17,7 @@ void salvarCriaturas(const char *nomeArquivo, criatura **lista) {
         slowPrint("---------------------------------------------\n", 25);
         return;
     }
-    for (int i = 0; i < z; i++) {
+    for (int i = 0; i < idx; i++) {
         if (lista[i] != NULL) {
             fprintf(arquivo, "%s %s %s %d %d %d %d %d\n", (*lista[i]).nome, (*lista[i]).tipo1, (*lista[i]).tipo2,
                     (*lista[i]).nivel, (*lista[i]).hp, (*lista[i]).atk, (*lista[i]).def, (*lista[i]).speed);

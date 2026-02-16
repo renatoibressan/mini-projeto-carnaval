@@ -99,6 +99,6 @@ int main(int argc, char *argv[]) {
     int count;
     const char *nomeArquivo = "criaturas.txt";
     if (argc > 1) nomeArquivo = argv[1];
-    menuPrincipal(option, c, nomes, count);
+    menuPrincipal(option, c, nomes, count, nomeArquivo);
     return 0;
 }
