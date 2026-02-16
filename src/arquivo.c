@@ -8,3 +8,8 @@
 #else
 #include <unistd.h>
 #endif
+
+void salvarCriaturas(const char *nomeArquivo, criatura **lista, int qtd) {
+}
+void carregarCriaturas(const char *nomeArquivo, criatura ***lista) {
+}
