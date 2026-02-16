@@ -110,8 +110,7 @@ void criarCriatura(criatura **c, char *nomes[], int *count) {
     scanf("%d", &((*crit).def));
     limparBuffer();
     printf("Velocidade: ");
-    scanf("%d%*c", &((*crit).speed));
-    limparBuffer();
+    scanf("%d", &((*crit).speed));
     c[idx] = crit;
     strcpy(nomes[*count], (*crit).nome);
     (*count)++;
