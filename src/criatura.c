@@ -123,11 +123,11 @@ void exibirCriatura(const char *nomeCriatura, const criatura **c) {
     while (i < idx) {
         if (strcmp(nomeCriatura, (*c[i]).nome) == 0) {
             slowPrint("---------------------------------------------\n", 25);
-            printf("Criatura '%s' encontrada!\n", (*c[i].nome));
+            printf("Criatura '%s' encontrada!\n", (c[i]->nome));
             slowPrint("---------------------------------------------\n", 25);
-            printf("Tipagens: %s/%s\n", (*c[i].tipo1), (*c[i].tipo2));
+            printf("Tipagens: %s/%s\n", (c[i]->tipo1), (c[i]->tipo2));
             slowPrint("---------------------------------------------\n", 25);
-            printf("Nivel: %d\n", (*c[i].nivel));
+            printf("Nivel: %d\n", (c[i]->nivel));
             printf("Stats:\nHP: %d\nAtaque: %d\nDefesa: %d\nVelocidade: %d\n", (*c[i]).hp, (*c[i]).atk, (*c[i]).def, (*c[i]).speed);
             slowPrint("---------------------------------------------\n", 25);
             found = 1;

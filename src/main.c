@@ -49,7 +49,7 @@ void menuPrincipal(char ch, criatura **c, char *nomes[], int count) {
                 } else {
                     printf("Insira um nome para procura de criatura: ");
                     scanf("%[^\n]%*c", nomeTeste);
-                    exibirCriatura(c, nomeTeste);
+                    exibirCriatura(nomeTeste, c);
                 }
                 break;
             case 'C':
@@ -61,7 +61,7 @@ void menuPrincipal(char ch, criatura **c, char *nomes[], int count) {
                 } else {
                     printf("Insira um nome para procura de criatura: ");
                     scanf("%[^\n]%*c", nomeTeste);
-                    editarCriatura(c, nomeCriatura);
+                    editarCriatura(nomeTeste, c);
                 }
                 break;
             case 'D':
