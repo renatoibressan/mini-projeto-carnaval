@@ -82,6 +82,11 @@ void menuPrincipal(char ch, criatura **c, char *nomes[], int count, const char *
                 salvarCriaturas(nomeArquivo, c);
                 clearScreen();
                 break;
+            case 'F':
+            case 'f':
+                carregarCriaturas(nomeArquivo, c);
+                clearScreen();
+                break;
             case '0':
                 slowPrint("Encerrando o programa...\n", 75);
                 break;
