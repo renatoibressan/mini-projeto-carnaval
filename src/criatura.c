@@ -70,7 +70,7 @@ void criarCriatura(criatura **c, char *nomes[], int *count) {
         upperCase(&novoNome[0]);
         if (criaturaExiste(novoNome, nomes, *count)) {
             slowPrint("---------------------------------------------\n", 25);
-            printf("O nome '%s' ja esta em uso. Por favor, digite outro nome:\n", novoNome);
+            printf("O nome '%s' ja esta em uso. Por favor, digite outro nome.\n", novoNome);
             slowPrint("---------------------------------------------\n", 25);
         } else {
             strcpy((*crit).nome, novoNome);
@@ -166,6 +166,7 @@ void editarCriatura(const char *nomeCriatura, criatura **c) {
                     do {
                         printf("Insira o novo tipo primario da criatura: ");
                         scanf("%[^\n]%*c", (*crit).tipo1);
+                        upperCase(&((*crit).tipo1[0]));
                         if (!tipoExiste((*crit).tipo1)) {
                             slowPrint("---------------------------------------------\n", 25);
                             printf("Por favor, use um tipo valido.\n");
@@ -178,6 +179,7 @@ void editarCriatura(const char *nomeCriatura, criatura **c) {
                 case 2:
                     printf("Insira o novo tipo secundario da criatura: ");
                     scanf("%[^\n]%*c", (*crit).tipo2);
+                    upperCase(&((*crit).tipo2[0]));
                     if (!tipoExiste((*crit).tipo2)) strcpy((*c[i]).tipo2, "---");
                     else strcpy((*c[i]).tipo2, (*crit).tipo2);
                     break;
@@ -237,6 +239,7 @@ void deletarCriatura(criatura ***c, char *nomes[], int *count) {
     }
     *count = 0;
     for (i = 0; i < 150; i++) {
+        nomes[i] = malloc(30*sizeof(char));
         memset(nomes[i], 0, sizeof(nomes[i]));
     }
     idx = 0;
