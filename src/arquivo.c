@@ -30,7 +30,7 @@ void salvarCriaturas(const char *nomeArquivo, criatura **lista) {
     slowPrint("---------------------------------------------\n", 25);
 }
 void carregarCriaturas(const char *nomeArquivo, criatura **lista) {
-    int i = 0, loads = 0;
+    int i = 0;
     FILE *arquivo = fopen(nomeArquivo, "r");
     if (arquivo == NULL) {
         printf("Nao foi possivel salvar o arquivo '%s'.\n", nomeArquivo);
@@ -50,7 +50,6 @@ void carregarCriaturas(const char *nomeArquivo, criatura **lista) {
                 printf("Stats:\nHP: %d\nAtaque: %d\nDefesa: %d\nVelocidade: %d\n",
                     (*lista[i]).hp, (*lista[i]).atk, (*lista[i]).def, (*lista[i]).speed);
                 slowPrint("---------------------------------------------\n", 25);
-                loads++;
             }
         i++;
     }
